@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using War.Units;
 
 namespace War
@@ -6,7 +7,7 @@ namespace War
     /// <summary>
     /// Представляет описание отряда, состоящего из юнитов.
     /// </summary>
-    public class Squad
+    public class Squad : IViewable
     {
         /// <summary>
         /// Возвращает или задает нацию, которой принадлежит данный отряд.
@@ -99,6 +100,11 @@ namespace War
             }
             else
                 return false;
+        }
+
+        public void Show()
+        {
+            Console.WriteLine($"{Owner.WhoseUnitsText} отряд");
         }
     }
 }

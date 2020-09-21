@@ -5,7 +5,7 @@ namespace War.Units
     /// <summary>
     /// Представляет абстрактное описание боевого юнита.
     /// </summary>
-    public abstract class Unit
+    public abstract class Unit : IViewable
     {
         /// <summary>
         /// Возвращает или задает имя юнита.
@@ -156,6 +156,11 @@ namespace War.Units
         /// Оказывает воздействие на других юнитов отряда, в котором состоит данный юнит.
         /// </summary>
         public abstract void Influence();
+
+        public void Show()
+        {
+            Console.WriteLine($"{Owner.WhoseUnitsText} {Name}");
+        }
 
         /// <summary>
         /// Задает константы, которые определяют род войск юнита.
